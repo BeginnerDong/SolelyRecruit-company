@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>我的资产</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/NavTab.css">
+</head>
+<style>
+.assets_Head{width: 150px;height: 150px;border:8px solid #0dbc84;margin: 0 auto;border-radius: 50%;box-sizing: border-box;}
+.assets_Head .xfMny{ left: 130px; top: 0px; min-width: 100px;}
+.assets_Head .czMny{right: 150px; top: 55px; min-width: 100px;text-align: right;}
+.assets_seltbtn .item{width: 75px; height: 30px;line-height: 30px;border-radius: 20px;border:1px solid #eee;}
+.fixdata{width: 75px;height: 75px; display: block; position: absolute; top: -8px;right:-8px;}
+</style>
+
+<body>
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head"><a class="back-next pa" href="javascript:history.go(-1);"><img class="icon" src="images/backIcon.png" ></a>我的资产</div>
+		<div class="h50"></div>
+		
+		<div class="pdlr4 mgtb20">
+			<div class="assets_Head flexCenter  pr">
+				<div class="cont center">
+					<p class="fs13 color6 mgb5">余额</p>
+					<p class="fs16">1500</p>
+				</div>
+				<img class="fixdata" src="images/statistics-icon1.png"/>
+				
+				<div class="xfMny fs12 pa">消费：500</div>
+				<div class="czMny fs12 pa">充值：2000</div>
+			</div>
+			
+			<div class="flexCenter assets_seltbtn center fs13 pdt20">
+				<a class="item" href="user_myAssets_recharge.html">充值</a>
+				<a class="item  mgl30" href="user_myCashOut.html">提现</a>
+			</div>
+		</div>
+		
+		<div class="orderNav" style="background: #e0eeff;">
+			<span class="tt" :class="num==1?'on':''" @click="change('1')">充值流水</span>
+			<span class="tt" :class="num==2?'on':''" @click="change('2')">提现流水</span>
+			<span class="tt" :class="num==3?'on':''" @click="change('3')">消费流水</span>
+		</div>
+		
+		<div class="pdlr4 fs14" v-show="num==1">
+			<ul>
+				<li class="flexRowBetween pdtb15 bordB1" v-for="(item,index) in rechargNotes" :key="index">
+					<span>2019.11.13</span>
+					<span>+200</span>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="pdlr4 fs14" v-show="num==2">
+			<ul>
+				<li class="flexRowBetween pdtb15 bordB1" v-for="(item,index) in rechargNotes" :key="index">
+					<span>2019.11.12</span>
+					<span>-150</span>
+				</li>
+			</ul>
+		</div>
+		<div class="pdlr4 fs14" v-show="num==3">
+			<ul>
+				<li class="flexRowBetween pdtb15 bordB1" v-for="(item,index) in rechargNotes" :key="index">
+					<span>2019.10.13</span>
+					<span>-100</span>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</body>
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: [],
+					num:1,
+					rechargNotes:[{},{},{}]
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				change(num){
+					const self = this;
+					if(num!=self.num){
+						self.num = num
+					}
+				},
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		});
+</script>
+
+</html>

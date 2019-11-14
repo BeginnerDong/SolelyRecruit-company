@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>个人中心</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+</head>
+<style>	
+.userHead{padding: 25px 4%;}
+.userHead .ll{ width: 80%;}
+.userHead .Rphoto{width: 60px; height: 60px;border-radius: 50%;display: block;}
+.XlineNav .icon{width: 15px;height: 15px;margin-right: 10px; display: block;}
+</style>
+
+<body class="pdb40 f5bj">
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head">个人中心</div>
+		<div class="h50"></div>
+		
+		<div class="userHead flexRowBetween whiteBj">
+			<div class="ll">
+				<h1 class="fs20 mgb10">纯粹科技</h1>
+				<p class="fs12 flex"><a class="color6" href="user_businessInfor.html">编辑公司信息</a></p>
+			</div>
+			<div class="flexEnd">
+				<img class="Rphoto" src="images/workbench-img1.png"/>
+			</div>
+		</div>
+		<div class="f5H10"></div>
+		
+		<div class="XlineNav whiteBj">
+			<div class="info pdlr4 bordB1">
+				<a class="flexRowBetween pdtb15" href="user_myAssets.html">
+					<div class="flex">
+						<img class="icon" src="images/about-icon.png">
+						<span class="tt">我的资产</span>
+					</div>
+					<div class="right flexEnd">
+						<img class="arrowR" src="images/arrow-icon.png" >
+					</div>
+				</a>
+			</div>
+			<div class="info pdlr4 bordB1">
+				<a class="flexRowBetween pdtb15" href="user_businessInfor.html">
+					<div class="flex">
+						<img class="icon" src="images/about-icon1.png">
+						<span class="tt">公司信息</span>
+					</div>
+					<div class="right flexEnd">
+						<img class="arrowR" src="images/arrow-icon.png" >
+					</div>
+				</a>
+			</div>
+			<div class="info pdlr4 bordB1">
+				<a class="flexRowBetween pdtb15" href="user_fabuRecruit.html">
+					<div class="flex">
+						<img class="icon" src="images/about-icon2.png">
+						<span class="tt">发布招聘</span>
+					</div>
+					<div class="right flexEnd">
+						<img class="arrowR" src="images/arrow-icon.png" >
+					</div>
+				</a>
+			</div>
+			<div class="info pdlr4 bordB1">
+				<a class="flexRowBetween pdtb15" href="user_jobGuanli.html">
+					<div class="flex">
+						<img class="icon" src="images/about-icon3.png">
+						<span class="tt">职位管理</span>
+					</div>
+					<div class="right flexEnd">
+						<img class="arrowR" src="images/arrow-icon.png" >
+					</div>
+				</a>
+			</div>
+			<div class="info pdlr4 bordB1">
+				<a class="flexRowBetween pdtb15" href="user_dataStats.html">
+					<div class="flex">
+						<img class="icon" src="images/about-icon4.png">
+						<span class="tt">数据统计</span>
+					</div>
+					<div class="right flexEnd">
+						<img class="arrowR" src="images/arrow-icon.png" >
+					</div>
+				</a>
+			</div>
+			<div class="info pdlr4">
+				<a class="flexRowBetween pdtb15" href="user_HRGuanli.html">
+					<div class="flex">
+						<img class="icon" src="images/about-icon5.png">
+						<span class="tt">HR管理</span>
+					</div>
+					<div class="right flexEnd">
+						<img class="arrowR" src="images/arrow-icon.png" >
+					</div>
+				</a>
+			</div>
+			<div class="f5H10"></div>
+			<div class="info pdlr4 flexCenter">
+				<a class="pdtb15" href="login_HR.html">切换至我是HR</a>
+			</div>
+		</div>
+		
+		<!--底部tab键-->
+		<div class="navbar flexRowBetween">
+			<div class="navbar_item">
+				<a href="index.html">
+					<div class="nav_img">
+						<img src="images/nabar1.png" />
+					</div>
+					<div class="text">搜人才</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="workbench.html">
+					<div class="nav_img">
+						<img src="images/nabar2.png" />
+					</div>
+					<div class="text">工作台</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="user.html">
+					<div class="nav_img">
+						<img src="images/nabar3-a.png" />
+					</div>
+					<div class="text this-text">个人中心</div>
+				</a>
+			</div>
+		</div>
+		<!--底部tab键 end-->
+		
+	</div>
+</body>
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: []
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		});
+</script>
+
+
+</html>

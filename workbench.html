@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>工作台</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="css/NavTab.css">
+	<link rel="stylesheet" type="text/css" href="css/workbench.css">
+	<link rel="stylesheet" type="text/css" href="css/adrss.css">
+</head>
+
+<body class="pdb70">
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head">工作台</div>
+		<div class="h50"></div>
+		
+		<div class="tooling_indNav f5bj color6">
+			<div class="list flexRowBetween">
+				<div class="item" :class="curr==1?'on':''" @click="change('1')">待邀约</div>
+				<div class="item" :class="curr==2?'on':''" @click="change('2')">待面试</div>
+				<div class="item" :class="curr==3?'on':''" @click="change('3')">已面试</div>
+			</div>
+		</div>
+		
+		<div v-show="curr==1">
+			<div class="samllNav flex color6 fs13 bordB1">
+				<span class="item" :class="num==1?'on':''" @click="chageSamll('1')">系统推荐</span>
+				<span class="item" :class="num==2?'on':''" @click="chageSamll('2')">自主投递</span>
+				<span class="item" :class="num==3?'on':''" @click="chageSamll('3')">邀约未确认</span>
+				<span class="item" :class="num==4?'on':''" @click="chageSamll('4')">邀约拒绝</span>
+			</div>
+			
+			<div class="positionList">
+				<ul>
+					<li>
+						<a class="liwap flexRowBetween pdtb15 pr mglr4" href="resumeDetail.html">
+							<span class="fxIcon"><img src="images/workbench-icon.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</a>
+						<div class="flexRowBetween pdtb10 mglr4 fs12 inviter">
+							<div class="flex">
+								<img class="pt mgr10" src="images/workbench-img1.png" >
+								<div class="">
+									<p>张丹·纯粹科技</p>
+									<p class="color9">10月20日</p>
+								</div>
+							</div>
+							<div class="btnB flexEnd center color6">
+								<span class="btn on" @click="inviteShow">确认邀请</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a class="liwap flexRowBetween pdtb15 pr mglr4" href="resumeDetail.html">
+							<span class="fxIcon"><img src="images/workbench-icon1.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</a>
+						<div class="flexRowBetween pdtb10 mglr4 fs12 inviter">
+							<div class="flex">
+								<!-- <img class="pt mgr10" src="images/workbench-img1.png" > -->
+								<div class="">
+									<p>张丹·纯粹科技</p>
+									<p class="color9">10月20日</p>
+								</div>
+							</div>
+							<div class="btnB flexEnd center color6">
+								<span class="btn on" @click="inviteShow">确认邀请</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a class="liwap flexRowBetween pdtb15 pr mglr4" href="resumeDetail.html">
+							<span class="fxIcon"><img src="images/workbench-icon2.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</a>
+						<div class="flexRowBetween pdtb10 mglr4 fs12 inviter">
+							<div class="flex"></div>
+							<div class="btnB flexEnd center color6">
+								<span class="btn on"  @click="inviteShow">确认邀请</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a class="liwap flexRowBetween pdtb15 pr mglr4" href="resumeDetail.html">
+							<span class="fxIcon"><img src="images/workbench-icon0.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</a>
+						<div class="flexRowBetween pdtb10 mglr4 fs12 inviter">
+							<div class="flex"></div>
+							<div class="btnB flexEnd center color6">
+								<span class="btn on" @click="inviteShow">确认邀请</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a class="liwap flexRowBetween pdtb15 pr mglr4" href="resumeDetail.html">
+							<span class="fxIcon"><img src="images/workbench-icon.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</a>
+						<div class="pdlr4 flexEnd ing fs13 pdb10">等待用户确认</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div v-show="curr==2">
+			<div class="positionList">
+				<ul>
+					<li>
+						<div class="liwap flexRowBetween pdtb15 pr mglr4">
+							<span class="fxIcon"><img src="images/workbench-icon.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</div>
+						<div class="flexRowBetween pdtb15 mglr4 fs12 inviter">
+							<div class="flex">面试时间：2019.11.13</div>
+							<div class="btnB flexEnd center color6">
+								<span class="btn">关闭</span>
+								<span class="btn on" @click="delayShow">延期</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="liwap flexRowBetween pdtb15 pr mglr4">
+							<span class="fxIcon"><img src="images/workbench-icon1.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</div>
+						<div class="flexRowBetween pdtb15 mglr4 fs12 inviter">
+							<div class="flex">面试时间：2019.11.13</div>
+							<div class="btnB flexEnd center color6">
+								<span class="btn">关闭</span>
+								<span class="btn on" @click="delayShow">延期</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div v-show="curr==3">
+			<div class="samllNav flex color6 fs13 bordB1">
+				<span class="item" :class="numTwo==1?'on':''" @click="chageFinish('1')">已入职</span>
+				<span class="item" :class="numTwo==2?'on':''" @click="chageFinish('2')">待入职</span>
+			</div>
+			
+			<div class="positionList">
+				<ul>
+					<li>
+						<div class="liwap flexRowBetween pdtb15 pr mglr4" href="#">
+							<span class="fxIcon"><img src="images/workbench-icon.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</div>
+						<div class="pdtb10 mglr4 fs12 inviter">
+							<div class="">备注：放假回公司来看和各说各话好几个会返利多少个供货方简单说两个号</div>
+							<div class="btnB flexEnd center color6">
+								<span class="btn on">未到岗</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="liwap flexRowBetween pdtb15 pr mglr4" href="#">
+							<span class="fxIcon"><img src="images/workbench-icon1.png"/></span>
+							<div class="flex ll">
+								<img class="Lphoto" src="images/workbench-img.png" >
+								<div class="infor">
+									<p class="name fs14">张益达</p>
+									<p class="lable fs13">会计</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+							</div>
+						</div>
+						<div class="pdtb10 mglr4 fs12 inviter flexRowBetween">
+							<div class="">面试时间：201911.13</div>
+							<div class="btnB flexEnd center color6">
+								<a class="btn" href="workbench_notPass.html">不通过</a>
+								<span class="btn on">入职</span>
+							</div>
+						</div>
+						<div class="pdtb10 mglr4 fs12 inviter flexRowBetween">
+							<div>备注：价格付款商量好苟富贵规划局分</div>
+							<div class="mgl20 flexEnd">
+								<a href="workbench_remarks.html"><img class="addIcon" src="images/workbench-icon5.png" ></a>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		
+		<!--底部tab键-->
+		<div class="navbar flexRowBetween">
+			<div class="navbar_item">
+				<a href="index.html">
+					<div class="nav_img">
+						<img src="images/nabar1.png" />
+					</div>
+					<div class="text">搜人才</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="workbench.html">
+					<div class="nav_img">
+						<img src="images/nabar2-a.png" />
+					</div>
+					<div class="text this-text">工作台</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="user.html">
+					<div class="nav_img">
+						<img src="images/nabar3.png" />
+					</div>
+					<div class="text">个人中心</div>
+				</a>
+			</div>
+		</div>
+		<!--底部tab键 end-->
+		
+		
+		<div class="black-bj" v-show="is_show"></div>
+		<!-- 选择邀约时间弹框 -->
+		<div class="inviteShow center whiteBj radius8" v-show="is_inviteShow">
+			<div class="RcolseBtn"  @click="inviteShow">×</div>
+			<p>请选择时间</p>
+			<div class="flexCenter mgtb20 setTime flexRowBetween">
+				<div class="timeInput"><input type="datetime" name="" id="" value="" placeholder="请选择时间" /></div>
+				<img class="timeIcon" src="images/workbench-icon4.png"/>
+			</div>
+			<div class="submitbtn">
+				<button class="Wbtn" style="border-radius: 5px;" type="button">确定</button>
+			</div>
+		</div>
+		
+		<!-- 重新选择邀约时间弹框 -->
+		<div class="inviteShow center whiteBj radius8" v-show="is_delayShow">
+			<div class="RcolseBtn"  @click="delayShow">×</div>
+			<p>请重新选择时间</p>
+			<div class="flexCenter mgtb10 setTime flexRowBetween">
+				<div class="timeInput"><input type="datetime" name="" id="" value="" placeholder="请选择时间" /></div>
+				<img class="timeIcon" src="images/workbench-icon4.png"/>
+			</div>
+			<div class="mgb15">
+				<textarea rows="" cols="" placeholder="请输入理由"></textarea>
+			</div>
+			<div class="submitbtn">
+				<button class="Wbtn" style="border-radius: 5px;" type="button">确定</button>
+			</div>
+		</div>
+	</div>
+</body>
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: [],
+					curr:1,
+					num:0,
+					is_inviteShow:false,
+					is_delayShow:false,
+					numTwo:0
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				change(curr){
+					const self = this;
+					if(curr!=self.curr){
+						self.curr = curr
+					}
+				},
+				chageSamll(num){
+					const self = this;
+					if(num!=self.num){
+						self.num = num
+					}
+				},
+				chageFinish(numTwo){
+					const self = this;
+					if(numTwo!=self.numTwo){
+						self.numTwo = numTwo
+					}
+				},
+				inviteShow(){
+					const self = this;
+					self.is_show = !self.is_show
+					self.is_inviteShow =!self.is_inviteShow
+				},
+				delayShow(){
+					const self = this;
+					self.is_show = !self.is_show
+					self.is_delayShow =!self.is_delayShow
+				},
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		})
+</script>
+
+
+</html>

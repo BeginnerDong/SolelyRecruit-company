@@ -1,0 +1,11 @@
+
+/* 详情页 */
+.detail_one{padding: 10px 4%;}
+.detail_one .tit{padding-bottom: 10px;}
+
+.detailxqBan{ width: 100%;height:200px; display: block;}
+.detailxqBan img{ width: 100%; height: 100%; display: block;}
+.xqInfor .cont div,.xqInfor .cont p{color: #666;padding-bottom: 5px;}
+.xqInfor .ql-editor{padding: 0;}
+.xqInfor .cont img{max-width: 100% !important; display: block;margin: 10px auto;}
+

@@ -1,0 +1,63 @@
+
+
+.samllNav{padding: 10px 4%;}
+.samllNav .item{margin-right: 30px;}
+.samllNav .item.on{color: #398EF9;}
+
+.positionList li{border-bottom: 5px solid #F5F5F5;}
+.positionList li .liwap{align-items: flex-start;}
+.positionList li.myself{border-bottom: 1px solid #F5F5F5;}
+.positionList li .ll{width: 80%;}
+.positionList li .fxIcon{width: 30px; height: 38px;position: absolute; top: 0;left: 0;}
+.positionList li .fxIcon img{width: 100%; height: 100%; display: block;}
+.positionList li .rr{width: 20%;text-align: right;}	
+.positionList li .ll .Lphoto{width: 55px;height: 70px;display: block;margin-right: 10px;}
+.positionList li .ll .infor{width: 70%;}
+.positionList li .ll .infor .lable{color: #666;line-height: 16px;padding: 6px 0;}
+
+.positionList li .inviter{border-top: 1px dashed #eee; border-bottom: 1px dashed #eee;}
+.positionList li .inviter .item{width: 50%;box-sizing: border-box;}
+.positionList li .inviter .item.right{border-left: 1px solid #eee;padding-left: 40px;}
+.positionList li .inviter .userPhoto{width: 35PX; height: 35px; border-radius: 50%;margin-right: 5px;}
+.positionList li .btnB .btn{ width:60px; height: 22px; line-height: 22px;border:1px solid #eee; border-radius: 4px;margin-left: 20px;}
+.positionList li .btnB .btn.on{ color: #398EF9; border: 1px solid #398EF9;}
+.positionList li .ing{color: #ff9221;}
+.positionList li .addIcon{width: 18px;height: 18px; display: block;}
+
+/* 邀请弹框 */
+.inviteShow{padding:35px 30px;width: 80%; box-sizing: border-box;min-height: 100px;position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%); z-index: 90;}
+.inviteShow .phoneIcon{width: 24px; height: 24px; display: block;margin-right: 10px;}
+.setTime{width: 100%;box-sizing: border-box;height: 30px;background: #f5f5f5;border-radius: 5px;padding: 0 10px;}
+.setTime .timeInput{width: 85%;}
+.setTime .timeInput input{width: 100%; display: block; line-height: 30px;background: none; font-size: 12px;}
+.setTime .timeIcon{width: 13px; height: 13px; display: block;}
+.inviteShow textarea{width: 100%;height: 100px;box-sizing: border-box;padding: 10px;border-radius: 5px;background: #F5F5F5; font-size: 12px;border: none;}
+
+
+
+/* 面试结果 */
+.ms-result{flex-wrap: wrap;}
+.ms-result .span{padding: 0 5px; border-radius: 3px; margin: 5px 0 5px 10px;}
+.ms-result .span.one{color: #398EF9;}
+.ms-result .span.two{background:#fff4e9;}
+.ms-result .span.three{background:#e8ffee;} 
+.ms-result .span.four{background:#e4f0ff;} 
+
+
+.seachbox{padding: 15px 4%;background: #398EF9;position: fixed;top: 50px;left: 0;width: 100%;box-sizing: border-box;}
+.seachbox .Licon{width:13px; height: 13px; display: block;}
+.seachbox .rr{width: 70%;background:#fff;border-radius: 20px;overflow: hidden;}
+.seachbox .rr .input{width: 80%;}
+.seachbox .rr .input input{width: 100%;line-height: 30px;border-radius: 20px;padding: 0 10px;box-sizing: border-box;display: block;text-align: center;}
+.seachbox .rr .seachBtn{width: 20%;height: 30px; display: block;background: url(../images/search-talent-icon2.png) no-repeat center center/16px 16px;}
+
+.sourceBox{border-top: 1px dashed #eee;}
+.sourceBox .pto{width: 30px;height: 30px;border-radius: 50%; display: block;}
+.source{width: 50px; line-height: 20px; padding: 0 5px;border-radius: 4px; color: #fff;text-align: center;background: #eee;font-size: 12px;}
+.source.hr{background: #ff982a;}
+.source.user{background: #20a947;}
+.source.xt{background: #398EF9;}
+
+.inviter{border-top: 1px dashed #eee;}
+.inviter .pt{width: 30px;height: 30px; border-radius: 50%;}
+

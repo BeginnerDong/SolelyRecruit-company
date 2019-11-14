@@ -1,0 +1,15 @@
+
+.resumeList ul li{border-bottom: 1px solid #eee; align-items: flex-start;}
+.resumeList ul .ll{align-items: flex-start;}
+.resumeList ul .ll .Lphoto{width: 45px; height: 45px;border-radius: 50%;}
+
+/* 上传图集 */
+.upImgbox{ flex-wrap: wrap;}
+.upImgbox .item{width: 110px; height:75px;margin: 0 2% 15px 0;}
+.upImgbox .item:nth-of-type(3n){margin-right: 0;}
+.upImgbox .item .pic{width: 100%; height: 100%; display: block;}
+.upImgbox .item .colse{width: 14px; height:14px; border-radius: 50%;color: #fff; background: rgba(0,0,0,0.5);position: absolute; top: -7px;right: -2px;text-align: center; line-height: 14px;}
+.addUpBtn{width: 100%; height: 100%; position: absolute; top: 0;left: 0;right: 0; bottom: 0; display: block; opacity: 0;}
+
+.fabuzheInfor .half{width: 50%;}
+.fabuzheInfor .half .icon{width: 14px;height: 14px;margin-right: 10px;}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>数据统计</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link type="text/css" rel="stylesheet" href="css/dataStats.css">
+</head>
+
+<body>
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head"><a class="back-next pa" href="javascript:history.go(-1);"><img class="icon" src="images/backIcon.png" ></a>数据统计</div>
+		<div class="h50"></div>
+		
+		<div class="pdlr4 f5bj flexRowBetween pdtb10 timeNav">
+			<div class="item flexColumn">
+				<p class="fs13 flexCenter">开始时间<img class="icon" src="images/statistics-icon.png" ></p>
+				<p class="fs12 color6">2019.11.14</p>
+			</div>
+			<div class="item flexColumn">
+				<p class="fs13 flexCenter">结束时间<img class="icon" src="images/statistics-icon.png" ></p>
+				<p class="fs12 color6">2019.11.14</p>
+			</div>
+		</div>
+		
+		<!-- 数据标注 -->
+		<div class="dataStats_tag flexCenter mgt20 mgb10 fs12">
+			<p class="item flex mglr10"><em class="dian C-one"></em>总邀约</p>
+			<p class="item flex mglr10"><em class="dian C-two"></em>总面试</p>
+			<p class="item flex mglr10"><em class="dian C-three"></em>总消费</p>
+			<p class="item flex mglr10"><em class="dian C-four"></em>总进账</p>
+		</div>
+		
+		<div class="pd30 pr">
+			
+			<!-- 数据统计 -->
+			<div class="dataStats_Head flexCenter pr fs13">
+				<div class="fx_item one center">
+					<span class="text">22人</span>
+				</div>
+				<div class="fx_item two center">
+					<span class="text">20人</span>
+				</div>
+				<div class="fx_item three center">
+					<span class="text">100元</span>
+				</div>
+				<div class="fx_item four center">
+					<span class="text">200元</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: []
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		});
+</script>
+
+</html>

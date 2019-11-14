@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>商家信息</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/editInput.css">
+</head>
+
+<body>
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head"><a class="back-next pa" href="javascript:history.go(-1);"><img class="icon" src="images/backIcon.png" ></a>商家信息</div>
+		<div class="h50"></div>
+		
+		<div class="pdlr4 mgtb15">
+			<h1 class="fs15">基础信息</h1>
+			<div class="editLine fs13">
+				<ul>
+					<li class="flex pdt10">
+						<span class="title">公司名称：</span>
+						<div class="rr">
+							<input type="text" name="" value="" placeholder="请输入公司名称" />
+						</div>
+					</li>
+					<li class="flex pdt10">
+						<span class="title">联系人：</span>
+						<div class="rr">
+							<input type="text" name="" value="" placeholder="请输入联系人" />
+						</div>
+					</li>
+					<li class="flex pdt10">
+						<span class="title">手机号：</span>
+						<div class="rr">
+							<input type="number" maxlength="11" name="" value="" placeholder="请输手机号" />
+						</div>
+					</li>
+					<li class="flex pdt10">
+						<span class="title">座机号：</span>
+						<div class="rr">
+							<input type="number" name="" value="" placeholder="请输入座机号" />
+						</div>
+					</li>
+					<li class="flex pdt10">
+						<span class="title">邮箱：</span>
+						<div class="rr">
+							<input type="text" name="" value="" placeholder="请输入邮箱" />
+						</div>
+					</li>
+					<li class="flex pdt10">
+						<span class="title">公司规模：</span>
+						<div class="rr">
+							<input type="text" name="" value="" placeholder="请输入公司规模" />
+						</div>
+					</li>
+					<li class="flex pdt10">
+						<span class="title">公司地址：</span>
+						<div class="rr">
+							<input type="text" name="" value="" placeholder="请输入公司地址" />
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="f5H10"></div>
+		
+		<div class="pdlr4 mgtb15">
+			<h1 class="fs15 pdb10">公司简介</h1>
+			<div>
+				<textarea rows="" cols="" placeholder="请输入公司简介"></textarea>
+			</div>
+		</div>
+		<div class="f5H10"></div>
+		
+		<div class="pdlr4 mgtb15">
+			<h1 class="fs15 pdb10">营业执照</h1>
+			<div>
+				<div class="rr upload_pic flex">
+					<div class="item pr">
+						<input class="upload" type="file" name="" value="" />
+						<img class="pic" src="images/merchants-icon.png" >
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="f5H10"></div>
+		<div class="pdlr4 submitbtn mgt30">
+			<a class="btn" href="#">确定</a>
+		</div>
+		
+	</div>
+</body>
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: []
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		});
+</script>
+
+</html>

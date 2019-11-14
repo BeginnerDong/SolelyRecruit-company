@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>搜人才</title>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+	<link rel="stylesheet" type="text/css" href="css/workbench.css">
+</head>
+
+<body  class="pdb70">
+	<div id="app">
+		<!-- 标题 -->
+		<div class="T-head line50 center fs16 Tfix-head">搜人才</div>
+		<div class="h50"></div>
+		<div class="h60"></div>
+		
+		<div class="flexRowBetween seachbox fs13">
+			<a class="flex white " href="index_jobEdit.html">
+				<img class="Licon mgr5" src="images/search-talent-icon.png" >
+				<span>会计</span>
+				<img class="arrowR" src="images/search-talent-icon1.png" >
+			</a>
+			<div class="flexRowBetween rr">
+				<div class="input">
+					<input type="" name="" id="" value="" placeholder="搜人才" />
+				</div>
+				<button class="seachBtn" type="button"></button>
+			</div>
+		</div>
+		
+		<div class="positionList">
+			<ul>
+				<li class="pdlr4">
+					<a href="resumeDetailTwo.html">
+						<div class="flexRowBetween pdtb15">
+							<div class="flex ll">
+								<img class="Lphoto" src="images/search-talent-img.png" >
+								<div class="infor">
+									<p class="name fs14">会计助理</p>
+									<p class="lable fs13">克莱</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+								<p class="fs12 color9 flexEnd">10月20日</p>
+							</div>
+						</div>
+						<div class="pdtb15 flexEnd sourceBox fs12">
+							<img class="pto" src="images/search-talent-img1.png" >
+							<span class="mgl10">杨飒<em class="mglr3">·</em>纯粹科技</span>
+							<span class="color6 mgl5 mgr15">10-20</span>
+							<span class="source hr">HR推荐</span>
+						</div>
+					</a>
+				</li>
+				<li class="pdlr4">
+					<a href="resumeDetailTwo.html">
+						<div class="flexRowBetween pdtb15">
+							<div class="flex ll">
+								<img class="Lphoto" src="images/search-talent-img.png" >
+								<div class="infor">
+									<p class="name fs14">会计助理</p>
+									<p class="lable fs13">克莱</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+								<p class="fs12 color9 flexEnd">10月20日</p>
+							</div>
+						</div>
+						<div class="pdtb15 flexEnd sourceBox fs12">
+							<img class="pto" src="images/search-talent-img1.png" >
+							<span class="mgl10">杨飒</span>
+							<span class="color6 mgl5 mgr15">10-20</span>
+							<span class="source user">用户推荐</span>
+						</div>
+					</a>
+				</li>
+				<li class="pdlr4">
+					<a href="resumeDetailTwo.html">
+						<div class="flexRowBetween pdtb15">
+							<div class="flex ll">
+								<img class="Lphoto" src="images/search-talent-img.png" >
+								<div class="infor">
+									<p class="name fs14">会计助理</p>
+									<p class="lable fs13">克莱</p>
+									<p class="color9 fs12">西安&nbsp;|&nbsp;3年&nbsp;|&nbsp;本科</p>
+								</div>
+							</div>
+							<div class="rr">
+								<div class="red mgb20 flexEnd">4K-6K</div>
+								<p class="fs12 color9 flexEnd">10月20日</p>
+							</div>
+						</div>
+						<div class="pdtb15 flexEnd sourceBox fs12">
+							<span class="color6 mgl5 mgr15">10-20</span>
+							<span class="source hr">系统推荐</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<!--底部tab键-->
+		<div class="navbar flexRowBetween">
+			<div class="navbar_item">
+				<a href="workbench.html">
+					<div class="nav_img">
+						<img src="images/nabar1-a.png" />
+					</div>
+					<div class="text this-text">搜人才</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="workbench.html">
+					<div class="nav_img">
+						<img src="images/nabar2.png" />
+					</div>
+					<div class="text">工作台</div>
+				</a>
+			</div>
+			<div class="navbar_item">
+				<a href="user.html">
+					<div class="nav_img">
+						<img src="images/nabar3.png" />
+					</div>
+					<div class="text">个人中心</div>
+				</a>
+			</div>
+		</div>
+		<!--底部tab键 end-->
+		
+		
+	</div>
+</body>
+	
+<script type="text/javascript">
+	var app = new Vue({
+		    el: '#app',
+		    data:function(){
+		        return {
+					is_show:false,
+					mainData: [],
+					positionDate:[{},{},{},{},{}]
+		        }
+		    },
+		    onLoad() {
+		    	const self = this;
+		    	// self.$Utils.loadAll(['getMainData'], self);
+		    },
+		    methods: {
+				getMainData() {
+					const self = this;
+					const postData = {};
+					postData.tokenFuncName = 'getProjectToken';
+					var callback = function(res){
+					    console.log('getMainData', res);
+					    self.mainData.push.apply(self.mainData,res.info.data);		        
+					};
+					self.$apis.orderGet(postData, callback);
+				}
+		    }
+		});
+</script>
+
+
+</html>
